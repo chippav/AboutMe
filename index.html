@@ -1,128 +1,269 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Venkata "Ram" Chippa — About Me</title>
-  <meta name="description" content="Contract/Temp developer in Austin, TX. ASP.NET MVC (no EF), Kendo UI, ADO.NET.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>👨‍💻</text></svg>">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Venkata “Ram” Chippa — Senior .NET Full‑Stack Developer</title>
+  <meta name="description" content="Senior .NET Full‑Stack Developer in Austin, TX. ASP.NET Core, MVC, Blazor, WPF/MVVM, Angular, React, REST APIs, SQL, Azure/AWS, Reporting. Open to C2C roles." />
+  <meta name="theme-color" content="#0f172a" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Venkata “Ram” Chippa — Senior .NET Full‑Stack Developer" />
+  <meta property="og:description" content="ASP.NET Core, MVC, Blazor, WPF/MVVM, Angular, React, REST APIs, SQL, Azure/AWS. Open to C2C roles." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://<your-github-username>.github.io/" />
+  <meta property="og:image" content="https://<your-github-username>.github.io/assets/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts (system stack for performance) & Icons -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-lmG7N..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{
+      --bg:#0b1220; --card:#111827; --muted:#94a3b8; --text:#e5e7eb; --brand:#22c55e; --accent:#38bdf8; --link:#60a5fa; --chip:#1f2937;
+      --maxw:1100px; --radius:16px; --shadow:0 10px 30px rgb(0 0 0 / 0.35);
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f8fafc; --card:#ffffff; --muted:#475569; --text:#0f172a; --brand:#16a34a; --accent:#0891b2; --link:#2563eb; --chip:#f1f5f9; }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;height:100%}
+    body{background:var(--bg); color:var(--text); font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw); margin:auto; padding:24px}
+    header{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:18px 0;}
+    nav a{margin-left:18px; font-weight:600}
+    .skip{position:absolute;left:-9999px;top:auto; width:1px;height:1px;overflow:hidden}
+    .skip:focus{left:12px; top:12px; width:auto; height:auto; background:#111827; color:#fff; padding:8px 12px; border-radius:8px; z-index:1000}
+
+    .hero{display:grid; gap:24px; grid-template-columns:1.2fr; padding:24px; background:linear-gradient(135deg,rgba(34,197,94,.12),rgba(56,189,248,.10)); border-radius:var(--radius)}
+    .hero h1{font-size:clamp(28px,5vw,44px); margin:0}
+    .title{font-weight:700}
+    .location{color:var(--muted)}
+    .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:8px}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; background:var(--brand); color:#051b0b; font-weight:700; box-shadow:var(--shadow)}
+    .btn.secondary{background:var(--accent); color:#07212a}
+    .btn.ghost{background:transparent; color:var(--text); border:1px solid rgba(148,163,184,.35); box-shadow:none}
+    .btn:hover{opacity:.95; text-decoration:none}
+
+    .grid{display:grid; gap:18px}
+    @media(min-width:900px){
+      .hero{grid-template-columns:1.4fr .8fr; align-items:center}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+      .grid-2{grid-template-columns:repeat(2,1fr)}
+      .grid-4{grid-template-columns:repeat(4,1fr)}
+    }
+
+    section{background:var(--card); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)}
+    h2{margin:0 0 12px; font-size:clamp(20px,3.4vw,28px)}
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{background:var(--chip); color:var(--text); padding:8px 10px; border-radius:999px; font-size:14px}
+    .muted{color:var(--muted)}
+    .list{margin:0; padding-left:18px}
+    .list li{margin-bottom:8px}
+
+    .exp{display:grid; gap:12px}
+    .role{display:grid; gap:4px; padding:16px; border:1px solid rgba(148,163,184,.25); border-radius:12px}
+    .role h3{margin:0; font-size:18px}
+    .role .meta{display:flex; flex-wrap:wrap; gap:10px; color:var(--muted); font-size:14px}
+    .role ul{margin:8px 0 0 20px}
+
+    .docs{display:grid; gap:14px}
+    .doc{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px; border:1px dashed rgba(148,163,184,.35); border-radius:12px; background:rgba(148,163,184,.05)}
+    .doc .left{display:flex; align-items:center; gap:12px}
+    .doc i{font-size:22px}
+    .doc .name{font-weight:600}
+    footer{padding:28px 0; color:var(--muted); text-align:center}
+  </style>
+
+  <!-- Schema.org Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Venkata Ramana (Ram) Chippa",
+    "jobTitle": "Senior Software Developer / .NET Full-Stack",
+    "email": "mailto:chippav@outlook.com",
+    "telephone": "+1-945-278-1107",
+    "url": "https://<your-github-username>.github.io/",
+    "sameAs": [
+      "https://www.linkedin.com/in/venkataramana-ch/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Austin",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "knowsAbout": [
+      ".NET 8", "ASP.NET Core", "MVC", "Blazor", "WPF", "MVVM", "REST APIs",
+      "Angular", "React", "TypeScript", "SQL Server", "Oracle SQL",
+      "Azure", "AWS", "SSRS", "Crystal Reports", "JasperReports"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <header class="nav">
-    <a href="#" class="logo">Ram</a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <button id="themeToggle" aria-label="Toggle theme">🌗</button>
-    </nav>
-  </header>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header aria-label="Main">
+      <div class="logo" aria-label="Home">
+        <a href="#" class="title" style="font-weight:800; letter-spacing:.2px;">Venkata “Ram” Chippa</a>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#documents">Secure Documents</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero" id="home" role="banner">
-      <div class="hero-inner">
-        <img class="avatar" src="assets/profile.jpg" alt="Photo of Ram" />
-        <h1>Hi, I’m <span class="accent">Venkata “Ram” Chippa</span>.</h1>
-        <p class="subtitle">Contract developer in Austin, TX — ASP.NET MVC (no EF), Kendo UI, ADO.NET.</p>
+    <main id="main" class="grid" role="main" aria-live="polite">
+      <section class="hero">
+        <div>
+          <h1>Senior .NET Full‑Stack Developer</h1>
+          <p class="muted">Austin, TX • Open to <strong>C2C</strong> roles</p>
+          <p>
+            I build robust, accessible apps across web, desktop, and hybrid mobile—covering **ASP.NET Core/MVC/Blazor**, **WPF/MVVM**, **Angular/React**, REST APIs, and high‑performance SQL. Cloud‑ready on **Azure/AWS**, with CI/CD, testing, and data‑rich reporting.
+          </p>
+          <div class="cta">
+            <a class="btn" href="mailto:chippav@outlook.com"><i class="fa-solid fa-paper-plane"></i> Email Me</a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/venkataramana-ch/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a class="btn ghost" href="assets/Venkata-Ramana-Chippa-Resume.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Resume (PDF)</a>
+          </div>
+        </div>
+        <div>
+          <section class="grid" style="gap:10px; padding:14px; background:rgba(96,165,250,.08); border-radius:14px">
+            <h2 style="margin:0 0 6px;">Quick Highlights</h2>
+            <ul class="list">
+              <li>12+ years in full‑stack .NET across Healthcare, Financial, Automotive & Retail</li>
+              <li>Frontend: Blazor, Angular, React, WPF; Backend: ASP.NET Core/.NET 8, Web API</li>
+              <li>DB: SQL Server, Oracle, SQLite; Reporting: SSRS, Crystal, Jasper</li>
+              <li>Cloud & DevOps: Azure/AWS, CI/CD (Azure DevOps, TeamCity), YAML</li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <section id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills</h2>
+        <div class="chips">
+          <span class="chip">.NET 8 / .NET Core</span>
+          <span class="chip">ASP.NET MVC / Web API</span>
+          <span class="chip">Blazor</span>
+          <span class="chip">WPF / MVVM</span>
+          <span class="chip">C#</span>
+          <span class="chip">Angular</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">JavaScript / jQuery</span>
+          <span class="chip">HTML5 / CSS / SCSS / Bootstrap</span>
+          <span class="chip">SQL Server / Oracle / SQLite</span>
+          <span class="chip">EF / EF Core / LINQ</span>
+          <span class="chip">Azure / AWS</span>
+          <span class="chip">Auth: Azure AD / OAuth 2.0</span>
+          <span class="chip">CI/CD: Azure DevOps / TeamCity</span>
+          <span class="chip">Unit tests: NUnit / Jasmine / Karma</span>
+          <span class="chip">Reporting: SSRS / Crystal / Jasper</span>
+          <span class="chip">3rd‑party UI: Syncfusion / Kendo / Infragistics / DevExpress</span>
+        </div>
+      </section>
+
+      <section id="experience" aria-labelledby="exp-title">
+        <h2 id="exp-title">Recent Experience</h2>
+        <div class="exp grid grid-3">
+          <article class="role" aria-label="State of Texas - TDA">
+            <h3>Senior Software Developer — State of Texas (Dept. of Agriculture)</h3>
+            <div class="meta"><span>Sep 2024 – Present</span><span>•</span><span>Austin, TX</span></div>
+            <ul>
+              <li>Built TANS features with <strong>Blazor</strong>, <strong>ASP.NET Core/.NET 8</strong>, <strong>SQL Server</strong>, and <strong>Syncfusion</strong>.</li>
+              <li>Implemented accessible, responsive UIs; integrated AD/OAuth 2.0; optimized high‑volume data flows.</li>
+              <li>Automated reporting (Excel/PDF/Word) and CI/CD with Azure DevOps.</li>
+            </ul>
+          </article>
+          <article class="role" aria-label="UT Austin">
+            <h3>Senior Software Developer — UT Austin (Petroleum & Geosystems Eng.)</h3>
+            <div class="meta"><span>Oct 2023 – Sep 2024</span><span>•</span><span>Austin, TX</span></div>
+            <ul>
+              <li>Migrated desktop simulator UI to the web with <strong>Angular 15</strong>, C# APIs; Dockerized C++ engine.</li>
+              <li>Delivered data viz via charts/grids (Infragistics), auth with Graph/LDAP, mobile via Ionic.</li>
+              <li>Deployed via YAML/Shell, CI/CD; ensured high code coverage with Jasmine/Karma.</li>
+            </ul>
+          </article>
+          <article class="role" aria-label="Broadridge">
+            <h3>Full‑Stack Dev & .NET GUI Lead — Broadridge Financial (SFCM)</h3>
+            <div class="meta"><span>Jan 2019 – Sep 2023</span><span>•</span><span>New York (Remote/Hybrid)</span></div>
+            <ul>
+              <li>Led WPF/MVVM UI modernization; designed reusable styles, templates, and controls.</li>
+              <li>Integrated SOAP/REST/BUS APIs; Oracle SQL PL/SQL; reporting (Crystal/Jasper).</li>
+              <li>SSO/AD, CI/CD (TeamCity), Agile/Scrum/Kanban; mentored and ran code reviews.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="documents" aria-labelledby="doc-title">
+        <h2 id="doc-title">Secure Documents</h2>
+        <p class="muted">These links should point to <strong>private</strong> share URLs (request access). Avoid hosting passport/I‑94 publicly.</p>
+        <div class="docs grid grid-2">
+          <div class="doc">
+            <div class="left"><i class="fa-solid fa-file-contract" aria-hidden="true"></i>
+              <div>
+                <div class="name">H‑1B Copy</div>
+                <div class="muted">PDF • private link recommended</div>
+              </div>
+            </div>
+            <a class="btn ghost" href="https://your-private-link.example/h1b" target="_blank" rel="noopener">Request Access</a>
+          </div>
+          <div class="doc">
+            <div class="left"><i class="fa-solid fa-passport" aria-hidden="true"></i>
+              <div>
+                <div class="name">Passport (ID Page)</div>
+                <div class="muted">PDF/Image • private link recommended</div>
+              </div>
+            </div>
+            <a class="btn ghost" href="https://your-private-link.example/passport" target="_blank" rel="noopener">Request Access</a>
+          </div>
+          <div class="doc">
+            <div class="left"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+              <div>
+                <div class="name">Resume (PDF)</div>
+                <div class="muted">Updated copy</div>
+              </div>
+            </div>
+            <a class="btn ghost" href="assets/Venkata-Ramana-Chippa-Resume.pdf" target="_blank" rel="noopener">Download</a>
+          </div>
+          <div class="doc">
+            <div class="left"><i class="fa-regular fa-id-card" aria-hidden="true"></i>
+              <div>
+                <div class="name">I‑94</div>
+                <div class="muted">PDF • private link recommended</div>
+              </div>
+            </div>
+            <a class="btn ghost" href="https://your-private-link.example/i94" target="_blank" rel="noopener">Request Access</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact</h2>
+        <p class="muted">Let’s connect about full‑stack .NET opportunities (C2C preferred).</p>
         <div class="cta">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="#contact">Contact Me</a>
+          <a class="btn" href="mailto:chippav@outlook.com"><i class="fa-solid fa-envelope"></i> chippav@outlook.com</a>
+          <a class="btn secondary" href="tel:+19452781107"><i class="fa-solid fa-phone"></i> (945) 278‑1107</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/venkataramana-ch/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
         </div>
-      </div>
-      <div class="scroll-indicator">↓</div>
-    </section>
+      </section>
+    </main>
 
-    <!-- About -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2>About</h2>
-        <p>
-          I build pragmatic, maintainable ASP.NET MVC apps with a clean ADO.NET data layer and Kendo UI on the front end.
-          I prioritize performance, reliability, and thoughtful UX. Based in Austin, TX.
-        </p>
-        <ul class="highlights">
-          <li>ASP.NET MVC 4.x without Entity Framework (ADO.NET)</li>
-          <li>Kendo Grid & custom widgets</li>
-          <li>SQL Server: stored procedures, indexing, perf tuning</li>
-          <li>CI/CD, code reviews, testable architecture</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="section alt">
-      <div class="container">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <div class="chip">C# / .NET Framework</div>
-          <div class="chip">ASP.NET MVC 4.x</div>
-          <div class="chip">ADO.NET</div>
-          <div class="chip">Kendo UI</div>
-          <div class="chip">JavaScript / jQuery</div>
-          <div class="chip">SQL Server</div>
-          <div class="chip">REST APIs</div>
-          <div class="chip">Azure DevOps</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section">
-      <div class="container">
-        <h2>Selected Projects</h2>
-        <div class="cards">
-          <article class="card">
-            <img src="assets/project1.png" alt="Project 1 screenshot">
-            <div class="card-body">
-              <h3>Kendo Grid Admin Portal</h3>
-              <p>Role-based admin portal with complex filtering, server-side paging, and export. ADO.NET data access with stored procs.</p>
-              <div class="tags">
-                <span>ASP.NET MVC</span><span>Kendo UI</span><span>SQL Server</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="placeholder">No image</div>
-            <div class="card-body">
-              <h3>Reporting Dashboard</h3>
-              <p>Custom reporting with scheduled emails, parametric queries, and caching for heavy workloads.</p>
-              <div class="tags">
-                <span>C#</span><span>ADO.NET</span><span>Performance</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section alt">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>Open to contract roles. The quickest way to reach me:</p>
-        <ul class="contact-list">
-          <li>📧 <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-          <li>💼 <a href="https://www.linkedin.com/in/yourprofile/" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li>💻 <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container small">
-      <span>© <span id="year"></span> Venkata “Ram” Chippa</span>
-      <span>•</span>
-      <a href="#home">Back to top</a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    <footer>
+      <div>© <span id="y"></span> Venkata “Ram” Chippa — Austin, TX</div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+  <!-- Note: Replace <your-github-username> above and update asset URLs. -->
 </body>
 </html>
